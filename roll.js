@@ -1,12 +1,5 @@
 var foods = new Map();
 
-foods.set("全部", [
-"友园","桃李园","三四","魔饭堂","老汤拉面"
-,"咖喱饭","河南烩面","简单味道","烤肉饭"
-,"牛肉汤","三杯鸡","味恋客","一碗好饭","萌锅蒸饭"
-,"蒸饺","淮南汤饭","朱家小馆", "今日特价"
-]);
-
 foods.set("外卖", [
 "魔饭堂","老汤拉面","咖喱饭","河南烩面","简单味道"
 ,"烤肉饭","牛肉汤","三杯鸡","味恋客","一碗好饭"
@@ -26,6 +19,9 @@ function Roll() {
     selectText = select.options[select.selectedIndex].text;
 
     selectFoods = foods.get(selectText);
+    if (selectText == "全部") {
+        selectFoods = foods.get("外卖").concat(foods.get("食堂"));
+    }
 
     randNum = Math.floor(Math.random() * selectFoods.length);
     result.innerHTML = selectFoods[randNum];
