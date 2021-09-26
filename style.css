@@ -50,6 +50,6 @@ body {
 
 @media screen and (max-width: 639px) {
     .main {
-        margin-top: 0px;
+        margin-top: 30%;
     }
 }
